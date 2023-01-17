@@ -74,6 +74,11 @@ to index them.
 
 ## Testing
 
+Test code is written in meta programming, making the code readable and concise.
+`TESTCASES` contains test cases and each test case is handled by `MAKETEST`.
+
+
+
 ## Summary
 
 Contact:
