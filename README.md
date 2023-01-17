@@ -10,7 +10,7 @@ codes.
 
 > The **FIRST RULE** of programming: machine is always right, and a code without testing is always wrong. 
 
-This project is inspired from [!NEMU project](https://github.com/NJU-ProjectN/nemu).
+This project is inspired from ![NEMU project](https://github.com/NJU-ProjectN/nemu).
 
 ## Configuration
 
@@ -66,10 +66,10 @@ to index them.
 ├── ref
 │   └── bit-field.c  # test for C bit field
 └── src
-:	├── dec-exec.c
-	├── semu.c
-	├── semu.h
-	└── test.c
+    ├── dec-exec.c
+    ├── semu.c
+    ├── semu.h
+    └── test.c
 ```
 
 ## Testing
@@ -107,4 +107,4 @@ Contact:
 
 Bug reports and suggestions please go to Minzhi (matt.0xcc@gmail.com).
 
-This project is restricted to [!GNU General Public License 3.0 (GPL 3.0)](https://opensource.org/licenses/GPL-3.0).
+This project is restricted to ![GNU General Public License 3.0 (GPL 3.0)](https://opensource.org/licenses/GPL-3.0).
