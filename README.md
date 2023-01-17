@@ -20,18 +20,18 @@ architecture (ISA), registers, and memory.
 - ISA: contains 4 basic instructions shown as follows.
 	
 ```c
-	// intel flavor:
+// intel flavor:
 
-		      7 6 5 4    3 2 1 0
-	MOV    [0 0 0 0]  [RT] [RS]
-	ADD    [0 0 0 1]  [RT] [RS]
-	LOAD   [1 1 1 0]  [ ADDR  ]
-	STORE  [1 1 1 1]  [ ADDR  ]
+        7 6 5 4    3 2 1 0
+MOV    [0 0 0 0]  [RT] [RS]
+ADD    [0 0 0 1]  [RT] [RS]
+LOAD   [1 1 1 0]  [ ADDR  ]
+STORE  [1 1 1 1]  [ ADDR  ]
 
-	RT: register target
-	RS: register source
-	LOAD: load data from memory to RA
-	STORE: write data from RA to memory
+RT: register target
+RS: register source
+LOAD: load data from memory to RA
+STORE: write data from RA to memory
 ```
 
 - Registers: there are 5 (8-bit) registers, `PC` (`rip` instruction pointer) and 4 general registers (`RA`, `R1`, `R2`, `R3`).
