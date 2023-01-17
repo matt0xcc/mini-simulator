@@ -66,7 +66,7 @@ to index them.
 ├── ref
 │   └── bit-field.c  # test for C bit field
 └── src
-	├── dec-exec.c
+:	├── dec-exec.c
 	├── semu.c
 	├── semu.h
 	└── test.c
@@ -77,7 +77,29 @@ to index them.
 Test code is written in meta programming, making the code readable and concise.
 `TESTCASES` contains test cases and each test case is handled by `MAKETEST`.
 
+```c
+#define ASSERT_EQ(a, b) ((u8)a == (u8)b)
 
+// each line corresponds a block of codes defined in MAKETEST
+// R[0]: RA
+#define TESTCASES(_) \
+  _(1, 0b11100111, rand_init_mem_reg, ASSERT_EQ(newR[0], oldM[7])) \
+  _(2, 0b00000100, rand_init_mem_reg, ASSERT_EQ(newR[1], oldR[0])) \
+  _(3, 0b11100101, rand_init_mem_reg, ASSERT_EQ(newR[0], oldM[5]) ) \
+  _(4, 0b00010001, rand_init_mem_reg, ASSERT_EQ(newR[0], oldR[0] + oldR[1]) ) \
+  _(5, 0b11110111, rand_init_mem_reg, ASSERT_EQ(newM[7], oldR[0]) ) 
+
+// note #inst in printf 
+#define MAKETEST(id, inst, init, postcond) { \
+  init(); \
+  memcpy(oldM, M, MEM_SIZE); \
+  memcpy(oldR, R, REG_SIZE); \
+  pc = 0; M[pc] = inst; \
+  dec_exec(); \
+  printf("Test #%d (%s): %s\n", \
+      id, #inst, (postcond) ? "PASS" : "FAIL"); \
+}
+```
 
 ## Summary
 
