@@ -24,17 +24,17 @@ typedef struct t2 {
 int main(int argc, char *argv[]) {
 	
 	// lab1: memory space
-	printf("Size of t1_t is %d\n", sizeof(t1_t));
-	printf("Size of t2_t is %d\n", sizeof(t2_t));
+	printf("Size of t1_t is %ul\n", sizeof(t1_t));
+	printf("Size of t2_t is %ul\n", sizeof(t2_t));
 
 	// lab2: memory order (implementation defined by GCC or other compilers)
 	t1_t foo;
 	foo.a = 0b1000;
-	printf("foo.a = 0b1000, the value of foo is %d\n", foo);
+	printf("foo.a = 0b1000, the value of foo is %ul\n", foo);
 
 	t1_t bar;
 	bar.d = 0b0001;
-	printf("bar.d = 0b0001, the value of bar is %d\n", bar);
+	printf("bar.d = 0b0001, the value of bar is %ul\n", bar);
 
 	printf("its arrangement is similar to little endian: t1 => [a b c d]\n\twhere 'a' is lowest 4 bits, followed by 2 bits for 'b', followedd by 1 bit for 'c', and followed by 1 bit for 'd' (which is the most significant bit)\n");
 
